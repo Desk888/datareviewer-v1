@@ -17,11 +17,8 @@ def main():
     missing_values = check_missing_values(df_cleaned)
     if not missing_values:
         logger.info(" [✅] Data Quality Check Passed: No missing values found.")
-    else:
-        logger.warning(" [⛔️] Data Quality Issue: Missing values detected.")
+        save_to_csv(df_cleaned)
     
-    # Save the cleaned DataFrame to CSV
-    save_to_csv(df_cleaned)
 
 if __name__ == '__main__':
     main()
