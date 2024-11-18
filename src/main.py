@@ -6,7 +6,7 @@ from app import (open_files,
                  remove_duplicates, 
                  save_to_csv, 
                  standardize_column_names,
-                 open_cleaned_file)
+                 )
 
 logger = logging.getLogger(__name__)
 
@@ -50,15 +50,7 @@ def main():
         logger.error(" [⛔️] No files found in the processed directory.")
         return
         
-    filepath = max(list_of_files, key=os.path.getctime)
-    cleaned_df = open_cleaned_file(filepath)
-    if cleaned_df is None:
-        logger.error(" [⛔️] Cleaned DataFrame could not be loaded from file.")
-        return
-    log_dataframe_info(cleaned_df, "After loading cleaned data")
-    
     # Run Main Analysis
-    
 
 if __name__ == '__main__':
     main()

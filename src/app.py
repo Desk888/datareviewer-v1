@@ -122,16 +122,3 @@ def save_to_csv(df, output_dir="data/processed", filename_prefix="cleaned_data",
     return file_path
 
 # ////////////////////////////////////////////////////////////////////////////////////
-
-# def open_cleaned_file(filename, output_dir="data/processed"):
-#     """
-#     Reads the cleaned CSV file from the processed directory into a DataFrame.
-#     """
-#     filepath = os.path.join(output_dir, filename)
-#     try:
-#         df = pd.read_csv(filepath)
-#         logger.info(f" [✅] Cleaned Data loaded from {filepath}")
-#         return df
-#     except Exception as e:
-#         logger.error(f" [⛔️] Error loading cleaned data from {filepath}", exc_info=True)
-#         return None
